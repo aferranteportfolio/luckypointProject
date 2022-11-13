@@ -7,6 +7,9 @@ const app = express()
 const functionality = require('./functionality')
 
 
+//db
+
+
 const PORT = 4001
 
 app.get('/products', (req,res)=>{
@@ -22,6 +25,10 @@ app.get('/names', (req,res)=>{
 app.get('/adress', (req,res)=>{
     let adress = functionality.adressMaping()
     res.send(adress)
+})
+app.get('/getAllInfo', (req,res)=>{
+    let info = functionality.getAllInfoFromAllPages()
+    res.send(info)
 })
 
 
